@@ -1,0 +1,131 @@
+/**
+ * globals.css
+ * 
+ * This file contains global styles for the ReachSpark website,
+ * including base styles, utilities, and responsive fixes.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-gray-800 antialiased;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+}
+
+/* Container fixes to prevent horizontal scrolling */
+.container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive fixes for all viewports */
+@media (max-width: 1280px) {
+  .overflow-x-auto {
+    overflow-x: visible !important;
+  }
+  
+  /* Fix for pricing tables that might cause horizontal scrolling */
+  .pricing-table-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure images don't cause overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet-specific fixes */
+@media (min-width: 640px) and (max-width: 1024px) {
+  /* Adjust padding for tablet viewports */
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Adjust grid layouts for tablet */
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* Fix for feature cards that might cause horizontal scrolling */
+  .feature-card {
+    width: 100% !important;
+  }
+}
+
+/* Laptop-specific fixes */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /* Adjust container width for laptop viewports */
+  .max-w-7xl {
+    max-width: 95% !important;
+  }
+  
+  /* Ensure tables are responsive */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Fix for mobile navigation */
+.mobile-nav {
+  width: 100vw;
+  max-width: 100%;
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Interface style transitions */
+.interface-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure footer stays at bottom */
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Fix for sticky navigation */
+.nav-spacer {
+  height: 4rem;
+}

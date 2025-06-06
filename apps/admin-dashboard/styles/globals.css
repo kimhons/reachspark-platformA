@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  /* Dashboard layout styles */
+  .dashboard-layout {
+    @apply min-h-screen flex flex-col;
+  }
+  
+  .dashboard-main {
+    @apply flex-grow flex;
+  }
+  
+  .dashboard-content {
+    @apply flex-grow p-6;
+  }
+  
+  /* Card styles */
+  .dashboard-card {
+    @apply bg-white dark:bg-dark rounded-xl shadow-dashboard transition-all duration-300;
+  }
+  
+  .dashboard-card-hover {
+    @apply hover:shadow-card-hover transform hover:-translate-y-1;
+  }
+  
+  /* Stat card styles */
+  .stat-card {
+    @apply p-6 rounded-xl transition-all duration-300;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary;
+  }
+  
+  .btn-success {
+    @apply btn bg-success text-white hover:bg-success-dark focus:ring-success;
+  }
+  
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger-dark focus:ring-danger;
+  }
+  
+  .btn-warning {
+    @apply btn bg-warning text-white hover:bg-warning-dark focus:ring-warning;
+  }
+  
+  .btn-info {
+    @apply btn bg-info text-white hover:bg-info-dark focus:ring-info;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border border-current hover:bg-opacity-10;
+  }
+  
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+  }
+  
+  .form-error {
+    @apply text-sm text-danger mt-1;
+  }
+  
+  /* Table styles */
+  .table-container {
+    @apply overflow-x-auto rounded-xl shadow-dashboard;
+  }
+  
+  .table {
+    @apply min-w-full divide-y divide-gray-200 dark:divide-gray-700;
+  }
+  
+  .table-header {
+    @apply bg-gray-50 dark:bg-dark-light;
+  }
+  
+  .table-header-cell {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider;
+  }
+  
+  .table-body {
+    @apply bg-white dark:bg-dark divide-y divide-gray-200 dark:divide-gray-700;
+  }
+  
+  .table-row {
+    @apply hover:bg-gray-50 dark:hover:bg-dark-light transition-colors;
+  }
+  
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-200;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-success {
+    @apply badge bg-success bg-opacity-10 text-success;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning bg-opacity-10 text-warning;
+  }
+  
+  .badge-danger {
+    @apply badge bg-danger bg-opacity-10 text-danger;
+  }
+  
+  .badge-info {
+    @apply badge bg-info bg-opacity-10 text-info;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    @apply w-64 bg-white dark:bg-dark shadow-sidebar transition-all duration-300;
+  }
+  
+  .sidebar-collapsed {
+    @apply w-20;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-light rounded-lg transition-colors;
+  }
+  
+  .sidebar-item-active {
+    @apply bg-primary bg-opacity-10 text-primary hover:bg-primary hover:bg-opacity-20;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    @apply bg-white dark:bg-dark shadow-sm z-10;
+  }
+  
+  /* Animation classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 shadow-lg;
+  }
+  
+  /* Dashboard specific components */
+  .chart-container {
+    @apply h-80 p-4 rounded-xl bg-white dark:bg-dark shadow-dashboard;
+  }
+  
+  .data-card {
+    @apply p-6 rounded-xl bg-white dark:bg-dark shadow-dashboard flex flex-col;
+  }
+  
+  .data-card-header {
+    @apply flex items-center justify-between mb-4;
+  }
+  
+  .data-card-title {
+    @apply text-lg font-heading font-semibold;
+  }
+  
+  .data-card-value {
+    @apply text-3xl font-bold mt-2;
+  }
+  
+  .data-card-subtitle {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+  }
+  
+  /* Token system specific styles */
+  .token-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary bg-opacity-10 text-primary;
+  }
+  
+  .token-progress {
+    @apply w-full h-2 bg-gray-200 dark:bg-dark-light rounded-full overflow-hidden;
+  }
+  
+  .token-progress-bar {
+    @apply h-full bg-primary rounded-full transition-all duration-500;
+  }
+}
+
+/* Custom utility styles */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-dark via-primary to-primary-light;
+  }
+  
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-br from-secondary-dark via-secondary to-secondary-light;
+  }
+  
+  .bg-gradient-diagonal {
+    @apply bg-gradient-to-br;
+  }
+  
+  .bg-blur {
+    @apply backdrop-blur-sm;
+  }
+}
